@@ -1,1 +1,22 @@
 # Sudoku_Solver
+
+
+EXPECTED FILE FORMAT
+The expected file format is as follows (please note that '#' can be any number from 0 to 9, 
+and that '(\n)' is referring to the newline character, which typically is created with the 'Enter' key).
+
+Begin file:
+### ### ###(\n)
+### ### ###(\n)
+### ### ###(\n)
+(\n)
+### ### ###(\n)
+### ### ###(\n)
+### ### ###(\n)
+(\n)
+### ### ###(\n)
+### ### ###(\n)
+### ### ###(\n)
+
+End file.
+
