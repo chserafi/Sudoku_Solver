@@ -39,6 +39,10 @@ void set_possible(puzzle_elem element, int new_possible) {
   element.possible = new_possible;
 }
 
+
+/*
+* This function will take in INPUT_FILE, printing its contents to the terminal one char at a time.
+*/
 void print_input_file(std::ifstream &input_file) {
  
 std::cout << std::endl << "The function (print_input_file) has been called." << std::endl;  
