@@ -80,6 +80,7 @@ void set_possible(puzzle_elem element, int new_possible) {
 /*
 * This function will take in INPUT_FILE, printing its contents to the terminal one char at a time.
 */
+//TODO Make sure this works correctly.
 void print_input_file(std::ifstream &input_file) {
  
 std::cout << std::endl << "The function (print_input_file) has been called." << std::endl;  
@@ -96,8 +97,16 @@ std::cout << "The function (print_input_file) has concluded." << std::endl;
   
 }
 
-//TODO Read arguements.
-//TODO Ensure the right syntax is used.
+/*
+* First, checks to make sure that only two arguments were used during the command call.
+*   If not, print out expected syntax and stop executing.
+* Second, attempts to open the input file (second argument).
+*   If opening the expected file fails, than output error and stop executing.
+* Third, print the input file to terminal to ensure correct formatting.
+* Fourth, wait for user to ensure that the input file is correct.
+* TODO...
+*/
+//TODO Make sure this works correctly.
 int main (int argc, char *argv[]) {
 
   if (argc != 2) {
