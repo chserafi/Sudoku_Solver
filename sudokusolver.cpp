@@ -39,6 +39,22 @@ void set_possible(puzzle_elem element, int new_possible) {
   element.possible = new_possible;
 }
 
+void print_input_file(std::ifstream &input_file) {
+ 
+std::cout << std::endl << "The function (print_input_file) has been called." << std::endl;  
+  
+  char temp;
+  
+  while (input_file.get(temp)) {
+   
+    std::cout << temp;
+    
+  }
+  
+std::cout << "The function (print_input_file) has concluded." << std::endl;
+  
+}
+
 //TODO Read arguements.
 //TODO Ensure the right syntax is used.
 int main (int argc, char *argv[]) {
@@ -59,12 +75,7 @@ int main (int argc, char *argv[]) {
             
     } else {
      
-      char temp;
-      while (input_file.get(temp)) {
-      
-        std::cout << temp;
-        
-      }
+      print_input_file(input_file);
       
     }
     
