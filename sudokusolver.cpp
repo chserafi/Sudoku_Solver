@@ -43,5 +43,31 @@ void set_possible(puzzle_elem element, int new_possible) {
 //TODO Ensure the right syntax is used.
 int main (int argc, char *argv[]) {
 
+  if (argc != 2) {
+   
+    std::cout << "Incorrect syntax. Please use the following syntax:" << std::endl
+      << "<command> <location of input file>" << std::endl << std::endl << "Program closing..." << std::endl;
+    
+  } else {
+    
+    std::ifstream input_file (argv[1]);
+    
+    if (!input_file.is_open()) {
+      
+      std::cout << "The input file (" << argv[1] << ") failed to open." << std::endl
+        << "Program closing..." << std::endl;
+            
+    } else {
+     
+      char temp;
+      while (input_file.get(temp)) {
+      
+        std::cout << temp;
+        
+      }
+      
+    }
+    
+  }
 
 }
