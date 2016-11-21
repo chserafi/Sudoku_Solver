@@ -1,5 +1,7 @@
-#include <ifstream>
+#include <iostream>
 #include <stdio>
+#include <string.h>
+#include <string>
 
 struct puzzle_elem {
 
@@ -126,6 +128,22 @@ int main (int argc, char *argv[]) {
     } else {
      
       print_input_file(input_file);
+      std::string answer;
+      std::cout << "Please ensure that the previously printed file is the intended file." << std::endl
+        << "Also ensure that the printed file is correctly formatted for this program." << std::endl
+        << "The expected formatting can be found within README.md" << std::endl << std::endl
+        << "Is this file ready for execution? (Yes / No):";
+      std::getline(cin, answer);
+      if (strcmp(answer, "Yes") == 0 || strcmp(answer, "Y") == 0) {
+       
+        //Continue executing
+        
+      } else {
+       
+        std::cout << "Please run this command with a different file." << std::endl
+          << "Program closing..." << std::endl;
+        
+      }
       
     }
     
