@@ -1,7 +1,84 @@
 #include <iostream>
-#include <stdio>
+#include <fstream>
+#include <stdio.h>
 #include <string.h>
 #include <string>
+
+struct puzzle_elem {
+
+  int number;
+  int set[10];
+  int possible;
+
+};
+
+//TODO Make sure this works correctly.
+/*
+* Return the NUMBER member of the passed in puzzle_elem ELEMENT.
+*/
+int get_number(puzzle_elem element) {
+  return element.number;
+//If this isn't working try:
+  /*
+  int output;
+  output = element.number;
+  return output;  
+  */
+}
+
+/*
+* Change the NUMBER of the passed in puzzle_elem ELEMENT to NEW_NUMBER.
+*/
+//TODO Make sure this works correctly.
+void set_number (puzzle_elem element, int new_number) {
+  element.number = new_number;
+}
+
+/*
+* Return the int that is stored within the array SET at position POSITION,
+* which is a member of the passed in puzzle_elem ELEMENT.
+*/
+//TODO Make sure this works correctly.
+int get_set(puzzle_elem element, int position) {
+  return element.set[position];
+//If this isn't working try:
+  /*
+  int output;
+  output = element.set[position];
+  return output;
+  */
+}
+
+/*
+* Change the number stored within the SET array location at POSITION
+* of the puzzle_elem ELEMENT to NEW_SET. 
+*/
+//TODO Make sure this works correctly.
+void set_set(puzzle_elem element, int position, int new_set) {
+  element.set[position] = new_set;
+}
+
+/*
+* Return the POSSIBLE member of the passed in puzzle_elem ELEMENT.
+*/
+//TODO Make sure this works correctly.
+int get_possible(puzzle_elem element) {
+  return element.possible;
+//If this isn't working try:
+  /*
+  int output;
+  output = element.possible;
+  return output;
+  */
+}
+
+/*
+* Change the POSSIBLE member within puzzle_elem ELEMENT to NEW_POSSIBLE.
+*/
+//TODO Make sure this works correctly.
+void set_possible(puzzle_elem element, int new_possible) {
+  element.possible = new_possible;
+}
 
 /*
 * This function will take in INPUT_FILE, printing its contents to the terminal one char at a time.
@@ -52,13 +129,13 @@ int main (int argc, char *argv[]) {
     } else {
      
       print_input_file(input_file);
-      std::string answer;
+      char answer;
       std::cout << "Please ensure that the previously printed file is the intended file." << std::endl
         << "Also ensure that the printed file is correctly formatted for this program." << std::endl
         << "The expected formatting can be found within README.md" << std::endl << std::endl
-        << "Is this file ready for execution? (Yes / No):";
-      std::getline(cin, answer);
-      if (strcmp(answer, "Yes") == 0 || strcmp(answer, "Y") == 0) {
+        << "Is this file ready for execution? (Y / N):";
+      std::cin >> answer;
+      if (answer == 'Y') {
        
         //Continue executing
         
