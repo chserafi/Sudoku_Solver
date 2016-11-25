@@ -4,6 +4,47 @@
 #include <string.h>
 #include <string>
 
+int original_puzzle[9][9];
+int output_puzzle[9][9];
+int test_puzzle[9][9];
+
+void print_puzzle(int puzzle[9][9]) {
+ 
+ int column;
+ int row;
+ int row_skip = 0;
+ 
+ while (row < 9) {
+  
+  while (column < 9) {
+   
+   std::cout << puzzle[row][column];
+   
+   if (column == 2 || column == 5) {
+    
+    std::cout << " ";
+    
+   }
+   
+   column = column + 1;
+   
+  }
+
+  std::cout << std::endl;
+  row_skip = row_skip + 1;
+  
+  if (row_skip != 2 && row_skip != 6 && row_skip != 10) {
+   
+   std::cout << std::endl;
+   row = row + 1;
+   column = 0;
+   
+  }
+  
+ }
+  
+}
+
 /*
 * This function will take in INPUT_FILE, printing its contents to the terminal one char at a time.
 */
