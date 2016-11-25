@@ -12,8 +12,8 @@ void print_puzzle(int puzzle[9][9]) {
  
 std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
  
- int column;
- int row;
+ int column = 0;
+ int row = 0;
  int row_skip = 0;
  
  while (row < 9) {
