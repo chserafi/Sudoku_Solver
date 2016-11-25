@@ -32,14 +32,17 @@ std::cout << std::endl << "The function (print_puzzle) has been called." << std:
    
   }
 
-  std::cout << std::endl;
   row_skip = row_skip + 1;
   
-  if (row_skip != 2 && row_skip != 6 && row_skip != 10) {
+  if (row_skip != 3 && row_skip != 7 && row_skip != 11) {
    
    std::cout << std::endl;
    row = row + 1;
    column = 0;
+   
+  } else {
+   
+   std::cout << std::endl;
    
   }
   
@@ -118,7 +121,7 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
      case '\n':
       row_skip = row_skip + 1;
       
-        if (row_skip != 2 && row_skip != 6 && row_skip != 10) {
+        if (row_skip != 3 && row_skip != 7 && row_skip != 11) {
       
          row = row + 1;
          column = 0;
