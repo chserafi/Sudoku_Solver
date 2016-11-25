@@ -10,6 +10,8 @@ int test_puzzle[9][9];
 
 void print_puzzle(int puzzle[9][9]) {
  
+std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
+ 
  int column;
  int row;
  int row_skip = 0;
@@ -18,7 +20,7 @@ void print_puzzle(int puzzle[9][9]) {
   
   while (column < 9) {
    
-   std::cout << puzzle[row][column];
+   std::cout << puzzle[column][row];
    
    if (column == 2 || column == 5) {
     
@@ -43,7 +45,103 @@ void print_puzzle(int puzzle[9][9]) {
   
  }
   
+std::cout << "The function (print_puzzle) has concluded." << std::endl;
+ 
 }
+
+
+void create_original_puzzle(std::ifstream &input_file) {
+ 
+std::cout << std::endl << "The function (create_original_puzzle) has been called." << std::endl;  
+  
+ char temp;
+ int column = 0;
+ int row = 0;
+ int row_skip = 0;
+  
+  while (input_file.get(temp)) {
+   
+    switch (temp) {
+      
+     case '0':
+      original_puzzle[column][row] = 0;
+      column = column + 1;
+      break;
+      
+     case '1':
+      original_puzzle[column][row] = 1;    
+      column = column + 1;  
+      break;
+       
+     case '2':
+      original_puzzle[column][row] = 2;
+      column = column + 1;
+      break;
+
+     case '3':
+      original_puzzle[column][row] = 3;
+      column = column + 1;
+      break;
+      
+     case '4':
+      original_puzzle[column][row] = 4;
+      column = column + 1;
+      break;
+      
+     case '5':
+      original_puzzle[column][row] = 5;
+      column = column + 1;
+      break;
+      
+     case '6':
+      original_puzzle[column][row] = 6;
+      column = column + 1;
+      break;
+      
+     case '7':
+      original_puzzle[column][row] = 7;
+      column = column + 1;
+      break;
+      
+     case '8':
+      original_puzzle[column][row] = 8;
+      column = column + 1;
+      break;
+      
+     case '9':
+      original_puzzle[column][row] = 9;
+      column = column + 1;
+      break;
+      
+     case ' ':
+      
+     case '\n':
+      row_skip = row_skip + 1;
+      
+        if (row_skip != 2 && row_skip != 6 && row_skip != 10) {
+      
+         row = row + 1;
+         column = 0;
+         
+        }
+      break;
+      
+     case default:
+      std::cout << "The original_puzzle could not be created. It appears that an odd character was found in the input file." 
+       << std::endl << "Program closing..." << std::endl;
+      exit(1);
+      break;
+      
+    }
+    
+  }
+  
+std::cout << "The function (create_original_puzzle) has concluded." << std::endl;
+  
+}
+
+
+
 
 /*
 * This function will take in INPUT_FILE, printing its contents to the terminal one char at a time.
@@ -101,7 +199,8 @@ int main (int argc, char *argv[]) {
       std::cin >> answer;
       if (answer == 'Y') {
        
-        //Continue executing
+        create_original_puzzle(input_file);
+       print_puzzle(original_puzzle);
         
       } else {
        
