@@ -52,7 +52,7 @@ std::cout << "The function (print_puzzle) has concluded." << std::endl;
  
 }
 
-
+//Adds numbers to the original puzzle, which shouldn't be altered after this in any way.
 void create_original_puzzle(std::ifstream &input_file) {
  
 std::cout << std::endl << "The function (create_original_puzzle) has been called." << std::endl;  
@@ -67,58 +67,70 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
     switch (temp) {
       
      case '0':
+std::cout << "Case 0." << std::endl;
       original_puzzle[column][row] = 0;
       column = column + 1;
       break;
       
      case '1':
+std::cout << "Case 1." << std::endl;
       original_puzzle[column][row] = 1;    
       column = column + 1;  
       break;
        
      case '2':
+std::cout << "Case 2." << std::endl;
       original_puzzle[column][row] = 2;
       column = column + 1;
       break;
 
      case '3':
+std::cout << "Case 3." << std::endl;
       original_puzzle[column][row] = 3;
       column = column + 1;
       break;
       
      case '4':
+std::cout << "Case 4." << std::endl;
       original_puzzle[column][row] = 4;
       column = column + 1;
       break;
       
      case '5':
+std::cout << "Case 5." << std::endl;
       original_puzzle[column][row] = 5;
       column = column + 1;
       break;
       
      case '6':
+std::cout << "Case 6." << std::endl;
       original_puzzle[column][row] = 6;
       column = column + 1;
       break;
       
      case '7':
+std::cout << "Case 7." << std::endl;
       original_puzzle[column][row] = 7;
       column = column + 1;
       break;
       
      case '8':
+std::cout << "Case 8." << std::endl;
       original_puzzle[column][row] = 8;
       column = column + 1;
       break;
       
      case '9':
+std::cout << "Case 9." << std::endl;
       original_puzzle[column][row] = 9;
       column = column + 1;
       break;
       
      case ' ':
+std::cout << "Case space." << std::endl;
       
      case '\n':
+std::cout << "Case endline." << std::endl;
       row_skip = row_skip + 1;
       
         if (row_skip != 3 && row_skip != 7 && row_skip != 11) {
