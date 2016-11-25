@@ -126,7 +126,7 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
         }
       break;
       
-     case default:
+     default:
       std::cout << "The original_puzzle could not be created. It appears that an odd character was found in the input file." 
        << std::endl << "Program closing..." << std::endl;
       exit(1);
