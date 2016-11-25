@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+#include <stdlib.h>
 
 int original_puzzle[9][9];
 int output_puzzle[9][9];
