@@ -11,7 +11,7 @@ int test_puzzle[9][9];
 
 void check_column(int puzzle[9][9], int column, int row) {
  
-std::cout << std::endl << "The function (check_column) has been called." << std::endl;
+std::cout << "The function (check_column) has been called." << std::endl;
  
  int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
  int size = 9;
@@ -19,19 +19,15 @@ std::cout << std::endl << "The function (check_column) has been called." << std:
  int output;
  
  for (int temp = 0; temp < 9; temp = temp + 1) {
-  
-  if (temp != row) {
+     
+  remover = puzzle[temp][row] + 1;
    
-   remover = puzzle[temp][row] + 1;
-   
-   if (set[remover] == 1) {
+  if (set[remover] == 1) {
     
-    set[remover] = 0;
-    size = size - 1;
+   set[remover] = 0;
+   size = size - 1;
     
    }
-    
-  }
   
  }
  
@@ -51,7 +47,7 @@ std::cout << std::endl << "The function (check_column) has been called." << std:
   
  }
  
-std::cout << std::endl << "The function (check_column) has concluded." << std::endl;
+std::cout << "The function (check_column) has concluded." << std::endl;
  
 }
 
@@ -125,7 +121,7 @@ std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
 //Adds numbers to the original puzzle, which shouldn't be altered after this in any way.
 void create_original_puzzle(std::ifstream &input_file) {
  
-std::cout << std::endl << "The function (create_original_puzzle) has been called." << std::endl;  
+std::cout << "The function (create_original_puzzle) has been called." << std::endl;  
  
  input_file.clear();
  input_file.seekg(0, input_file.beg);
@@ -238,7 +234,7 @@ std::cout << std::endl << "The function (print_input_file) has been called." << 
     
   }
   
-std::cout << "The function (print_input_file) has concluded." << std::endl;
+std::cout << std::endl << "The function (print_input_file) has concluded." << std::endl;
   
 }
 
