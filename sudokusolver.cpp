@@ -28,9 +28,7 @@ std::cout << std::endl << "The function (print_puzzle) has been called." << std:
   std::cout << std::endl;
   row = row + 1;
   column = 0;
-    
-  }
-  
+ 
  }
   
 std::cout << "The function (print_puzzle) has concluded." << std::endl;
