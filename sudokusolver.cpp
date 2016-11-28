@@ -20,7 +20,7 @@ std::cout << "The function (check_column) has been called." << std::endl;
  
  for (int temp = 0; temp < 9; temp = temp + 1) {
      
-  remover = puzzle[temp][row] + 1;
+  remover = puzzle[column][temp] + 1;
    
   if (set[remover] == 1) {
     
