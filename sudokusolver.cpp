@@ -23,7 +23,7 @@ std::cout << "The function (check_column) has been called." << std::endl;
   
   if (set[compare] == 1) {
    
-   set[compare] == 0;
+   set[compare] = 0;
    size = size - 1;
    
   }
