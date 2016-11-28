@@ -22,7 +22,7 @@ std::cout << std::endl << "The function (check_column) has been called." << std:
   
   if (temp != row) {
    
-   remover = puzzle[temp][row];
+   remover = puzzle[temp][row] + 1;
    
    if (set[remover] == 1) {
     
