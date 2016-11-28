@@ -128,10 +128,32 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
   
 std::cout << "The function (create_original_puzzle) has concluded." << std::endl;
   
+ create_output_puzzle();
+ create_test_puzzle();
+ 
 }
 
+void create_output_puzzle() {
 
+std::cout << "The function (create_output_puzzle) has been called." << std::endl;
+ 
+ output_puzzle = original_puzzle;
+ print_puzzle(output_puzzle); 
+ 
+std::cout << "The function (create_output_puzzle) has concluded." << std::endl;
+ 
+}
 
+void create_test_puzzle() {
+ 
+std::cout << "The function (create_test_puzzle) has been called." << std::endl;
+ 
+ test_puzzle = original_puzzle;
+ print_puzzle(output_puzzle);
+ 
+std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
+ 
+}
 
 /*
 * This function will take in INPUT_FILE, printing its contents to the terminal one char at a time.
