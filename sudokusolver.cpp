@@ -35,6 +35,28 @@ std::cout << "The function (print_puzzle) has concluded." << std::endl;
  
 }
 
+void create_output_puzzle() {
+
+std::cout << "The function (create_output_puzzle) has been called." << std::endl;
+ 
+ output_puzzle = original_puzzle;
+ print_puzzle(output_puzzle); 
+ 
+std::cout << "The function (create_output_puzzle) has concluded." << std::endl;
+ 
+}
+
+void create_test_puzzle() {
+ 
+std::cout << "The function (create_test_puzzle) has been called." << std::endl;
+ 
+ test_puzzle = original_puzzle;
+ print_puzzle(output_puzzle);
+ 
+std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
+ 
+}
+
 //Adds numbers to the original puzzle, which shouldn't be altered after this in any way.
 void create_original_puzzle(std::ifstream &input_file) {
  
@@ -130,28 +152,6 @@ std::cout << "The function (create_original_puzzle) has concluded." << std::endl
   
  create_output_puzzle();
  create_test_puzzle();
- 
-}
-
-void create_output_puzzle() {
-
-std::cout << "The function (create_output_puzzle) has been called." << std::endl;
- 
- output_puzzle = original_puzzle;
- print_puzzle(output_puzzle); 
- 
-std::cout << "The function (create_output_puzzle) has concluded." << std::endl;
- 
-}
-
-void create_test_puzzle() {
- 
-std::cout << "The function (create_test_puzzle) has been called." << std::endl;
- 
- test_puzzle = original_puzzle;
- print_puzzle(output_puzzle);
- 
-std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
  
 }
 
