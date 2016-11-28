@@ -53,67 +53,67 @@ std::cout << "Hey look I'm in the loop!" << std::endl;
     switch (temp) {
       
      case '0':
-std::cout << "Case 0." << std::endl;
+//std::cout << "Case 0." << std::endl;
       original_puzzle[column][row] = 0;
       column = column + 1;
       break;
       
      case '1':
-std::cout << "Case 1." << std::endl;
+//std::cout << "Case 1." << std::endl;
       original_puzzle[column][row] = 1;    
       column = column + 1;  
       break;
        
      case '2':
-std::cout << "Case 2." << std::endl;
+//std::cout << "Case 2." << std::endl;
       original_puzzle[column][row] = 2;
       column = column + 1;
       break;
 
      case '3':
-std::cout << "Case 3." << std::endl;
+//std::cout << "Case 3." << std::endl;
       original_puzzle[column][row] = 3;
       column = column + 1;
       break;
       
      case '4':
-std::cout << "Case 4." << std::endl;
+//std::cout << "Case 4." << std::endl;
       original_puzzle[column][row] = 4;
       column = column + 1;
       break;
       
      case '5':
-std::cout << "Case 5." << std::endl;
+//std::cout << "Case 5." << std::endl;
       original_puzzle[column][row] = 5;
       column = column + 1;
       break;
       
      case '6':
-std::cout << "Case 6." << std::endl;
+//std::cout << "Case 6." << std::endl;
       original_puzzle[column][row] = 6;
       column = column + 1;
       break;
       
      case '7':
-std::cout << "Case 7." << std::endl;
+//std::cout << "Case 7." << std::endl;
       original_puzzle[column][row] = 7;
       column = column + 1;
       break;
       
      case '8':
-std::cout << "Case 8." << std::endl;
+//std::cout << "Case 8." << std::endl;
       original_puzzle[column][row] = 8;
       column = column + 1;
       break;
       
      case '9':
-std::cout << "Case 9." << std::endl;
+//std::cout << "Case 9." << std::endl;
       original_puzzle[column][row] = 9;
       column = column + 1;
       break;
       
      case '\n':
-std::cout << "Case endline." << std::endl;
+//std::cout << "Case endline." << std::endl;
      row = row + 1;
      column = 0;
      break;
