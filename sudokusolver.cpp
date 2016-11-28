@@ -282,6 +282,7 @@ int main (int argc, char *argv[]) {
        create_original_puzzle(input_file);
 //print_puzzle(original_puzzle);
        check_column(output_puzzle, 0, 0);
+       print_puzzle(output_puzzle);
         
       } else {
        
