@@ -8,17 +8,14 @@ The expected file format is as follows (please note that '#' can be any number f
 and that '(\n)' is referring to the newline character, which typically is created with the 'Enter' key).
 
 Begin file:
-### ### ###(\n)
-### ### ###(\n)
-### ### ###(\n)
-(\n)
-### ### ###(\n)
-### ### ###(\n)
-### ### ###(\n)
-(\n)
-### ### ###(\n)
-### ### ###(\n)
-### ### ###(\n)
-(\n)
+#########(\n)
+#########(\n)
+#########(\n)
+#########(\n)
+#########(\n)
+#########(\n)
+#########(\n)
+#########(\n)
+#########(\n)
 End file.
 
