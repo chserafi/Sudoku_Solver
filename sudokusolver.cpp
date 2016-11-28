@@ -65,6 +65,8 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
   
   while (input_file.get(temp)) {
    
+std::cout << "Hey look I'm in the loop!" << std::endl;
+   
     switch (temp) {
       
      case '0':
