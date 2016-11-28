@@ -35,11 +35,29 @@ std::cout << "The function (print_puzzle) has concluded." << std::endl;
  
 }
 
+void copy_puzzle(int copyfrom[9][9], int pasteto[9][9]) {
+ 
+std::cout << "The function (copy_puzzle) has been called." << std::endl;
+ 
+ for (int column = 0; column < 9; column = column + 1) {
+  
+  for (int row = 0; row < 9; row = row + 1) {
+   
+   pasteto[column][row] = copyfrom[column][row];
+   
+  }
+  
+ } 
+ 
+std::cout << "The function (copy_puzzle) has concluded." << std::endl;
+ 
+}
+
 void create_output_puzzle() {
 
 std::cout << "The function (create_output_puzzle) has been called." << std::endl;
  
- output_puzzle = original_puzzle;
+ copy_puzzle(original_puzzle, output_puzzle);
  print_puzzle(output_puzzle); 
  
 std::cout << "The function (create_output_puzzle) has concluded." << std::endl;
@@ -50,7 +68,7 @@ void create_test_puzzle() {
  
 std::cout << "The function (create_test_puzzle) has been called." << std::endl;
  
- test_puzzle = original_puzzle;
+ copy_puzzle(original_puzzle, test_puzzle);
  print_puzzle(output_puzzle);
  
 std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
