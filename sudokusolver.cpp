@@ -15,35 +15,32 @@ std::cout << "The function (check_column) has been called." << std::endl;
  
  int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
  int size = 9;
- int remover;
- int output;
+ int compare;
  
  for (int temp = 0; temp < 9; temp = temp + 1) {
      
-  remover = puzzle[column][temp] + 1;
+  compare = puzzle[column][temp];
+  
+  if (set[compare] == 1) {
    
-  if (set[remover] == 1) {
-    
-   set[remover] = 0;
+   set[compare] == 0;
    size = size - 1;
-    
-   }
+   
+  }
   
  }
  
  if (size == 1) {
-
+   
   for (int temp = 0; temp < 10; temp = temp + 1) {
    
    if (set[temp] == 1) {
     
-    output = temp;
+    puzzle[column][row] = temp;    
     
    }
-  
+   
   }
-  
-  puzzle[column][row] = output;
   
  }
  
