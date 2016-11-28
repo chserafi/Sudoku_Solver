@@ -15,36 +15,20 @@ std::cout << std::endl << "The function (print_puzzle) has been called." << std:
  
  int column = 0;
  int row = 0;
- int row_skip = 0;
  
  while (row < 9) {
   
   while (column < 9) {
    
    std::cout << puzzle[column][row];
-   
-   if (column == 2 || column == 5) {
-    
-    std::cout << " ";
-    
-   }
-   
    column = column + 1;
    
   }
-
-  row_skip = row_skip + 1;
   
-  if (row_skip != 3 && row_skip != 7 && row_skip != 11) {
-   
-   std::cout << std::endl;
-   row = row + 1;
-   column = 0;
-   
-  } else {
-   
-   std::cout << std::endl;
-   
+  std::cout << std::endl;
+  row = row + 1;
+  column = 0;
+    
   }
   
  }
@@ -63,9 +47,7 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
  
  char temp;
  int column = 0;
- int row = 0;
- int row_skip = 0;
-  
+ int row = 0;  
   while (input_file.get(temp)) {
    
 std::cout << "Hey look I'm in the loop!" << std::endl;
@@ -132,20 +114,11 @@ std::cout << "Case 9." << std::endl;
       column = column + 1;
       break;
       
-     case ' ':
-std::cout << "Case space." << std::endl;
-      
      case '\n':
 std::cout << "Case endline." << std::endl;
-      row_skip = row_skip + 1;
-      
-        if (row_skip != 3 && row_skip != 7 && row_skip != 11) {
-      
-         row = row + 1;
-         column = 0;
-         
-        }
-      break;
+     row = row + 1;
+     column = 0;
+     break;
       
      default:
       std::cout << "The original_puzzle could not be created. It appears that an odd character was found in the input file." 
