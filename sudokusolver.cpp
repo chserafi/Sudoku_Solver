@@ -30,6 +30,12 @@ std::cout << "The function (check_column) has been called." << std::endl;
   
  }
  
+ std::cout << "The set after checking is: (";
+ for (int temp = 0; temp < 10; temp = temp + 1) {
+  std::cout << set[temp] << ", ";
+ }
+ std::cout << ")" << std::endl; 
+ 
  if (size == 1) {
    
   for (int temp = 0; temp < 10; temp = temp + 1) {
