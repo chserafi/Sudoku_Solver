@@ -57,7 +57,10 @@ std::cout << "The function (print_puzzle) has concluded." << std::endl;
 void create_original_puzzle(std::ifstream &input_file) {
  
 std::cout << std::endl << "The function (create_original_puzzle) has been called." << std::endl;  
-  
+ 
+ input_file.clear();
+ input_file.seekg(0, input_file.beg);
+ 
  char temp;
  int column = 0;
  int row = 0;
@@ -168,6 +171,9 @@ void print_input_file(std::ifstream &input_file) {
  
 std::cout << std::endl << "The function (print_input_file) has been called." << std::endl;  
   
+ input_file.clear();
+ input_file.seekg(0, input_file.beg);
+ 
   char temp;
   
   while (input_file.get(temp)) {
