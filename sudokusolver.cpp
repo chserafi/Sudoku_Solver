@@ -30,12 +30,6 @@ std::cout << "The function (check_column) has been called." << std::endl;
   
  }
  
- std::cout << "The set after checking is: (";
- for (int temp = 0; temp < 10; temp = temp + 1) {
-  std::cout << set[temp] << ", ";
- }
- std::cout << ")" << std::endl; 
- 
  if (size == 1) {
    
   for (int temp = 0; temp < 10; temp = temp + 1) {
@@ -54,6 +48,44 @@ std::cout << "The function (check_column) has concluded." << std::endl;
  
 }
 
+void check_row(int puzzle[9][9], int column, int row) {
+ 
+std::cout << "The function (check_row) has been called." << std::endl;
+ 
+ int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+ int size = 9;
+ int compare;
+ 
+ for (int temp = 0; temp < 9; temp = temp + 1) {
+     
+  compare = puzzle[temp][row];
+  
+  if (set[compare] == 1) {
+   
+   set[compare] = 0;
+   size = size - 1;
+   
+  }
+  
+ }
+
+ if (size == 1) {
+   
+  for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+   if (set[temp] == 1) {
+    
+    puzzle[column][row] = temp;    
+    
+   }
+   
+  }
+  
+ }
+ 
+std::cout << "The function (check_row) has concluded." << std::endl;
+ 
+}
 
 void print_puzzle(int puzzle[9][9]) {
  
@@ -281,6 +313,7 @@ int main (int argc, char *argv[]) {
        create_original_puzzle(input_file);
 //print_puzzle(original_puzzle);
        check_column(output_puzzle, 0, 0);
+       check_row(output_puzzle, 8, 8);
        print_puzzle(output_puzzle);
         
       } else {
