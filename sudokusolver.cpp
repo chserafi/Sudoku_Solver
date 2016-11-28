@@ -48,8 +48,6 @@ std::cout << std::endl << "The function (create_original_puzzle) has been called
  int row = 0;  
   while (input_file.get(temp)) {
    
-std::cout << "Hey look I'm in the loop!" << std::endl;
-   
     switch (temp) {
       
      case '0':
@@ -189,7 +187,7 @@ int main (int argc, char *argv[]) {
       char answer;
       std::cout << "Please ensure that the previously printed file is the intended file." << std::endl
         << "Also ensure that the printed file is correctly formatted for this program." << std::endl
-        << "The expected formatting can be found within README.md" << std::endl << std::endl
+        << "The expected formatting can be found within README" << std::endl << std::endl
         << "Is this file ready for execution? (Y / N):";
       std::cin >> answer;
       if (answer == 'Y') {
