@@ -96,7 +96,7 @@ std::cout << std::endl << "The function (print_puzzle) has been called." << std:
  
  for (int row = 0; row < 9; row = row + 1) {
   
-  for (int column = 0; column < 9; row = row + 1) {
+  for (int column = 0; column < 9; column = column + 1) {
    
    std::cout << puzzle[column][row][0];
    column = column + 1;
