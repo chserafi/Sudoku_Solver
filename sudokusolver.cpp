@@ -5,113 +5,53 @@
 #include <string>
 #include <stdlib.h>
 
-int original_puzzle[9][9];
-int output_puzzle[9][9];
-int test_puzzle[9][9];
+//Setup the puzzles for later manipulation.
+//The first entry ios the column, second is the row,
+//and the third is used to remember the possible numbers
+//that the cell can be. puzzle[x][y][0] is the current number
+//that is used within the cell at locaiton (x, y).
+int original_puzzle[9][9][10];
+int output_puzzle[9][9][10];
+int test_puzzle[9][9][10];
 
-void check_column(int puzzle[9][9], int column, int row) {
+//Check the column of the location passed in to ensure that the row is correct.
+void check_column(int puzzle[9][9][10], int column, int row) {
  
 std::cout << "The function (check_column) has been called." << std::endl;
- 
- int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
- int size = 9;
- int compare;
- 
- if (puzzle[column][row] == 0) {
- 
-  for (int temp = 0; temp < 9; temp = temp + 1) {
-     
-   compare = puzzle[column][temp];
-  
-   if (set[compare] == 1) {
-   
-    set[compare] = 0;
-    size = size - 1;
-   
-   }
-  
-  }
- 
-  if (size == 1) {
-   
-   for (int temp = 0; temp < 10; temp = temp + 1) {
-   
-    if (set[temp] == 1) {
-    
-     puzzle[column][row] = temp;    
-    
-    }
-   
-   }
-  
-  }
-  
- }
  
 std::cout << "The function (check_column) has concluded." << std::endl;
  
 }
 
-void check_row(int puzzle[9][9], int column, int row) {
- 
-std::cout << "The function (check_row) has been called." << std::endl;
- 
- int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
- int size = 9;
- int compare;
- 
- if (puzzle[column][row] == 0) {
- 
-  for (int temp = 0; temp < 9; temp = temp + 1) {
-     
-   compare = puzzle[temp][row];
-  
-   if (set[compare] == 1) {
-   
-    set[compare] = 0;
-    size = size - 1;
-   
-   }
-  
-  }
+//Check the row of the location passed in to ensure that the row is correct.
+void check_row(int puzzle[9][9][10], int column, int row) {
 
-  if (size == 1) {
-   
-   for (int temp = 0; temp < 10; temp = temp + 1) {
-   
-    if (set[temp] == 1) {
-    
-     puzzle[column][row] = temp;    
-    
-    }
-   
-   }
-  
-  }
-  
- }
- 
+std::cout << "The function (check_row) has been called." << std::endl;
+
 std::cout << "The function (check_row) has concluded." << std::endl;
  
 }
 
-void check_puzzle(int puzzle[9][9]) {
+//Check the box of the location passed in to ensure that the box is correct.
+void check_box(int puzzle[9][9][10], int column, int row) {
  
- for (int row = 0; row < 9; row = row + 1) {
-  
-  for (int column = 0; column < 9; column = column + 1) {
-   
-   check_column(puzzle, column, row);
-   check_row(puzzle, column, row);
-   
-  }
-  
- }
+std::cout << "The function (check_box) has been called." << std::endl;
+
+std::cout << "The function (check_box) has concluded." << std::endl;
+ 
+}
+
+//Scan through the entire puzzle, making sure that all cells are correct.
+void check_puzzle(int puzzle[9][9][10]) {
+ 
+std::cout << "The function (check_puzzle) has been called." << std::endl;
+
+std::cout << "The function (check_puzzle) has concluded." << std::endl;
  
 }
 
 //TODO convert to for loops?
-void print_puzzle(int puzzle[9][9]) {
+void print_puzzle(int puzzle[9][9][10]) {
  
 std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
  
@@ -137,7 +77,7 @@ std::cout << "The function (print_puzzle) has concluded." << std::endl;
  
 }
 
-void copy_puzzle(int copyfrom[9][9], int pasteto[9][9]) {
+void copy_puzzle(int copyfrom[9][9][10] int pasteto[9][9][10]) {
  
 std::cout << "The function (copy_puzzle) has been called." << std::endl;
  
