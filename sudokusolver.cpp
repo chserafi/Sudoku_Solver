@@ -14,20 +14,6 @@ int original_puzzle[9][9][10];
 int output_puzzle[9][9][10];
 int test_puzzle[9][9][10];
 
-//Replace the cell's number with NUMBER, then removes all other 
-//possible numbers for that cell.
-//Only called at puzzle creation, and when a number is SURE to be the only possible answer.
-void replace_number(int puzzle[9][9][10], int column, int row, int number) {
-  
-std::cout << "The function (replace_number) has been called." << std::endl;
- 
- puzzle[column][row][0] = number;
- remove_number(puzzle, column, row, number);
- 
-std::cout << "The function (replace_number) has concluded." << std::endl;
- 
-}
-
 //Remove the NUMBER from the list off possible numbers that the cell can be
 //at the location passed in.
 //Only called at puzzle creation, and when a number is SURE to be the only possible answer.
@@ -50,6 +36,20 @@ std::cout << "The function (remove_number) has been called." << std::endl;
  }
  
 std::cout << "The function (remove_number) has concluded." << std::endl;
+ 
+}
+
+//Replace the cell's number with NUMBER, then removes all other 
+//possible numbers for that cell.
+//Only called at puzzle creation, and when a number is SURE to be the only possible answer.
+void replace_number(int puzzle[9][9][10], int column, int row, int number) {
+  
+std::cout << "The function (replace_number) has been called." << std::endl;
+ 
+ puzzle[column][row][0] = number;
+ remove_number(puzzle, column, row, number);
+ 
+std::cout << "The function (replace_number) has concluded." << std::endl;
  
 }
 
@@ -114,7 +114,7 @@ std::cout << "The function (print_puzzle) has concluded." << std::endl;
 }
 
 //Changes the puzzle PASTETO to match exactly the puzzle COPYFROM.
-void copy_puzzle(int copyfrom[9][9][10] int pasteto[9][9][10]) {
+void copy_puzzle(int copyfrom[9][9][10], int pasteto[9][9][10]) {
  
 std::cout << "The function (copy_puzzle) has been called." << std::endl;
  
