@@ -17,29 +17,33 @@ std::cout << "The function (check_column) has been called." << std::endl;
  int size = 9;
  int compare;
  
- for (int temp = 0; temp < 9; temp = temp + 1) {
-     
-  compare = puzzle[column][temp];
-  
-  if (set[compare] == 1) {
-   
-   set[compare] = 0;
-   size = size - 1;
-   
-  }
-  
- }
+ if (puzzle[column][row] == 0) {
  
- if (size == 1) {
+  for (int temp = 0; temp < 9; temp = temp + 1) {
+     
+   compare = puzzle[column][temp];
+  
+   if (set[compare] == 1) {
    
-  for (int temp = 0; temp < 10; temp = temp + 1) {
+    set[compare] = 0;
+    size = size - 1;
    
-   if (set[temp] == 1) {
-    
-    puzzle[column][row] = temp;    
-    
    }
+  
+  }
+ 
+  if (size == 1) {
    
+   for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+    if (set[temp] == 1) {
+    
+     puzzle[column][row] = temp;    
+    
+    }
+   
+   }
+  
   }
   
  }
@@ -56,29 +60,33 @@ std::cout << "The function (check_row) has been called." << std::endl;
  int size = 9;
  int compare;
  
- for (int temp = 0; temp < 9; temp = temp + 1) {
+ if (puzzle[column][row] == 0) {
+ 
+  for (int temp = 0; temp < 9; temp = temp + 1) {
      
-  compare = puzzle[temp][row];
+   compare = puzzle[temp][row];
   
-  if (set[compare] == 1) {
+   if (set[compare] == 1) {
    
-   set[compare] = 0;
-   size = size - 1;
+    set[compare] = 0;
+    size = size - 1;
    
-  }
-  
- }
-
- if (size == 1) {
-   
-  for (int temp = 0; temp < 10; temp = temp + 1) {
-   
-   if (set[temp] == 1) {
-    
-    puzzle[column][row] = temp;    
-    
    }
+  
+  }
+
+  if (size == 1) {
    
+   for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+    if (set[temp] == 1) {
+    
+     puzzle[column][row] = temp;    
+    
+    }
+   
+   }
+  
   }
   
  }
