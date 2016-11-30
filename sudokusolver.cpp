@@ -17,29 +17,33 @@ std::cout << "The function (check_column) has been called." << std::endl;
  int size = 9;
  int compare;
  
- for (int temp = 0; temp < 9; temp = temp + 1) {
-     
-  compare = puzzle[column][temp];
-  
-  if (set[compare] == 1) {
-   
-   set[compare] = 0;
-   size = size - 1;
-   
-  }
-  
- }
+ if (puzzle[column][row] == 0) {
  
- if (size == 1) {
+  for (int temp = 0; temp < 9; temp = temp + 1) {
+     
+   compare = puzzle[column][temp];
+  
+   if (set[compare] == 1) {
    
-  for (int temp = 0; temp < 10; temp = temp + 1) {
+    set[compare] = 0;
+    size = size - 1;
    
-   if (set[temp] == 1) {
-    
-    puzzle[column][row] = temp;    
-    
    }
+  
+  }
+ 
+  if (size == 1) {
    
+   for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+    if (set[temp] == 1) {
+    
+     puzzle[column][row] = temp;    
+    
+    }
+   
+   }
+  
   }
   
  }
@@ -56,29 +60,33 @@ std::cout << "The function (check_row) has been called." << std::endl;
  int size = 9;
  int compare;
  
- for (int temp = 0; temp < 9; temp = temp + 1) {
+ if (puzzle[column][row] == 0) {
+ 
+  for (int temp = 0; temp < 9; temp = temp + 1) {
      
-  compare = puzzle[temp][row];
+   compare = puzzle[temp][row];
   
-  if (set[compare] == 1) {
+   if (set[compare] == 1) {
    
-   set[compare] = 0;
-   size = size - 1;
+    set[compare] = 0;
+    size = size - 1;
    
-  }
-  
- }
-
- if (size == 1) {
-   
-  for (int temp = 0; temp < 10; temp = temp + 1) {
-   
-   if (set[temp] == 1) {
-    
-    puzzle[column][row] = temp;    
-    
    }
+  
+  }
+
+  if (size == 1) {
    
+   for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+    if (set[temp] == 1) {
+    
+     puzzle[column][row] = temp;    
+    
+    }
+   
+   }
+  
   }
   
  }
@@ -87,6 +95,22 @@ std::cout << "The function (check_row) has concluded." << std::endl;
  
 }
 
+void check_puzzle(int puzzle[9][9]) {
+ 
+ for (int row = 0; row < 9; row = row + 1) {
+  
+  for (int column = 0; column < 9; column = column + 1) {
+   
+   check_column(puzzle, column, row);
+   check_row(puzzle, column, row);
+   
+  }
+  
+ }
+ 
+}
+
+//TODO convert to for loops?
 void print_puzzle(int puzzle[9][9]) {
  
 std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
@@ -312,8 +336,7 @@ int main (int argc, char *argv[]) {
        
        create_original_puzzle(input_file);
 //print_puzzle(original_puzzle);
-       check_column(output_puzzle, 0, 0);
-       check_row(output_puzzle, 8, 8);
+       check_puzzle(output_puzzle);
        print_puzzle(output_puzzle);
         
       } else {
