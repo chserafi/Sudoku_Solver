@@ -80,6 +80,38 @@ void change_cell_number(int puzzle[9][9][10], int column, int row, int number) {
 int check_column(int puzzle[9][9][10], int column, int row) {
  
 //std::cout << "The function (check_column) has been called." << std::endl;
+  
+ int set[9] = {1, 1, 1, 1, 1, 1, 1, 1, 1};
+ int size = 9;
+ 
+ for (int temp = 0; temp < 9; temp = temp + 1) {
+  
+  if (puzzle[column][temp][0] == 0) {
+  
+   return 0;
+   
+  } else {
+   
+   if (set[puzzle[column][temp][0]] == 1) {
+    
+    set[puzzle[column][temp][0]] = 0;
+    size = size - 1;
+   
+   } else {
+    
+    return 0;
+    
+   }
+    
+  }
+  
+ }
+ 
+ if (size == 0) {
+  
+  return 1;
+  
+ }
  
 //std::cout << "The function (check_column) has concluded." << std::endl;
  
@@ -418,7 +450,7 @@ int main (int argc, char *argv[]) {
        create_original_puzzle(input_file);
 print_puzzle(original_puzzle);
 //       check_puzzle(output_puzzle);
-print_puzzle(output_puzzle);
+//print_puzzle(output_puzzle);
         
       } else {
        
