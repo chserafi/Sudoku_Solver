@@ -90,6 +90,7 @@ std::cout << "The function (check_column) has been called." << std::endl;
   if (puzzle[column][temp][0] == 0) {
   
    return 0;
+std::cout << "The function (check_column) has concluded." << std::endl;
    
   } else {
    
@@ -101,6 +102,7 @@ std::cout << "The function (check_column) has been called." << std::endl;
    } else {
     
     return 0;
+std::cout << "The function (check_column) has concluded." << std::endl;
     
    }
     
@@ -111,6 +113,7 @@ std::cout << "The function (check_column) has been called." << std::endl;
  if (size == 0) {
   
   return 1;
+std::cout << "The function (check_column) has concluded." << std::endl;
   
  }
  
