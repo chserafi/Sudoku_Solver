@@ -9,6 +9,84 @@ int original_puzzle[9][9];
 int output_puzzle[9][9];
 int test_puzzle[9][9];
 
+void check_column(int puzzle[9][9], int column, int row) {
+ 
+std::cout << "The function (check_column) has been called." << std::endl;
+ 
+ int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+ int size = 9;
+ int compare;
+ 
+ for (int temp = 0; temp < 9; temp = temp + 1) {
+     
+  compare = puzzle[column][temp];
+  
+  if (set[compare] == 1) {
+   
+   set[compare] = 0;
+   size = size - 1;
+   
+  }
+  
+ }
+ 
+ if (size == 1) {
+   
+  for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+   if (set[temp] == 1) {
+    
+    puzzle[column][row] = temp;    
+    
+   }
+   
+  }
+  
+ }
+ 
+std::cout << "The function (check_column) has concluded." << std::endl;
+ 
+}
+
+void check_row(int puzzle[9][9], int column, int row) {
+ 
+std::cout << "The function (check_row) has been called." << std::endl;
+ 
+ int set[10] = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+ int size = 9;
+ int compare;
+ 
+ for (int temp = 0; temp < 9; temp = temp + 1) {
+     
+  compare = puzzle[temp][row];
+  
+  if (set[compare] == 1) {
+   
+   set[compare] = 0;
+   size = size - 1;
+   
+  }
+  
+ }
+
+ if (size == 1) {
+   
+  for (int temp = 0; temp < 10; temp = temp + 1) {
+   
+   if (set[temp] == 1) {
+    
+    puzzle[column][row] = temp;    
+    
+   }
+   
+  }
+  
+ }
+ 
+std::cout << "The function (check_row) has concluded." << std::endl;
+ 
+}
+
 void print_puzzle(int puzzle[9][9]) {
  
 std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
@@ -58,7 +136,7 @@ void create_output_puzzle() {
 std::cout << "The function (create_output_puzzle) has been called." << std::endl;
  
  copy_puzzle(original_puzzle, output_puzzle);
- print_puzzle(output_puzzle); 
+//print_puzzle(output_puzzle); 
  
 std::cout << "The function (create_output_puzzle) has concluded." << std::endl;
  
@@ -69,7 +147,7 @@ void create_test_puzzle() {
 std::cout << "The function (create_test_puzzle) has been called." << std::endl;
  
  copy_puzzle(original_puzzle, test_puzzle);
- print_puzzle(output_puzzle);
+//print_puzzle(output_puzzle);
  
 std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
  
@@ -78,7 +156,7 @@ std::cout << "The function (create_test_puzzle) has concluded." << std::endl;
 //Adds numbers to the original puzzle, which shouldn't be altered after this in any way.
 void create_original_puzzle(std::ifstream &input_file) {
  
-std::cout << std::endl << "The function (create_original_puzzle) has been called." << std::endl;  
+std::cout << "The function (create_original_puzzle) has been called." << std::endl;  
  
  input_file.clear();
  input_file.seekg(0, input_file.beg);
@@ -191,7 +269,7 @@ std::cout << std::endl << "The function (print_input_file) has been called." << 
     
   }
   
-std::cout << "The function (print_input_file) has concluded." << std::endl;
+std::cout << std::endl << "The function (print_input_file) has concluded." << std::endl;
   
 }
 
@@ -232,8 +310,11 @@ int main (int argc, char *argv[]) {
       std::cin >> answer;
       if (answer == 'Y') {
        
-        create_original_puzzle(input_file);
-       print_puzzle(original_puzzle);
+       create_original_puzzle(input_file);
+//print_puzzle(original_puzzle);
+       check_column(output_puzzle, 0, 0);
+       check_row(output_puzzle, 8, 8);
+       print_puzzle(output_puzzle);
         
       } else {
        
