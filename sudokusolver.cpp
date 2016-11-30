@@ -77,9 +77,10 @@ void change_cell_number(int puzzle[9][9][10], int column, int row, int number) {
 }
 
 //Check the column of the location passed in to ensure that the row is correct.
+//TODO make work
 int check_column(int puzzle[9][9][10], int column, int row) {
  
-//std::cout << "The function (check_column) has been called." << std::endl;
+std::cout << "The function (check_column) has been called." << std::endl;
   
  int set[9] = {1, 1, 1, 1, 1, 1, 1, 1, 1};
  int size = 9;
@@ -92,9 +93,9 @@ int check_column(int puzzle[9][9][10], int column, int row) {
    
   } else {
    
-   if (set[puzzle[column][temp][0]] == 1) {
+   if (set[puzzle[column][temp][0] - 1] == 1) {
     
-    set[puzzle[column][temp][0]] = 0;
+    set[puzzle[column][temp][0] - 1] = 0;
     size = size - 1;
    
    } else {
@@ -113,7 +114,7 @@ int check_column(int puzzle[9][9][10], int column, int row) {
   
  }
  
-//std::cout << "The function (check_column) has concluded." << std::endl;
+std::cout << "The function (check_column) has concluded." << std::endl;
  
 }
 
