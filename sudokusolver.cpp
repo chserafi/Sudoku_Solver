@@ -14,78 +14,141 @@ int original_puzzle[9][9][10];
 int output_puzzle[9][9][10];
 int test_puzzle[9][9][10];
 
-//Remove the NUMBER from the list off possible numbers that the cell can be
-//at the location passed in.
-//Only called at puzzle creation, and when a number is SURE to be the only possible answer.
-void remove_number(int puzzle[9][9][10], int column, int row, int number) {
+//Searches through the possibilities for the cell at the locaiton passed in.
+//If only one option remains, it returns the number that the cell must be,
+//otherwise it returns zero.
+int last_possible_number(int puzzle[9][9][10], int column, int row) {
  
-std::cout << "The function (remove_number) has been called." << std::endl;
+//std::cout << "The function (last_possible_number) has been called." << std::endl;
  
- for (int temp = 1; temp < 10; temp = temp + 1) {
+ int possibilities = 0;
+ int output = 0;
+ int crawler = 1;
+ 
+ while (crawler < 10) {
+  
+  if (puzzle[column][row][crawler] == 1) {
    
-  if (temp != number && number != 0) {
+   possibilities = possibilities + 1;
    
-   puzzle[column][row][temp] = 0;
+  }
+  
+  if (possibilities == 1) {
+   
+   output = temp;
    
   } else {
-    
-   puzzle[column][row][temp] = 1;
-  
-  }
    
+   output = 0;
+   
+  }
+  
+  crawler = crawler + 1;
+  
  }
  
-std::cout << "The function (remove_number) has concluded." << std::endl;
+//std::cout << "The function (last_possible_number) has concluded." << std::endl;
+ return output;
+ 
+}
+
+//Remove the NUMBER from the list of possible numbers that the cell can be
+//at the location passed in can be.
+void remove_possible_number(int puzzle[9][9][10], int column, int row, int number) {
+ 
+//std::cout << "The function (remove_number) has been called." << std::endl;
+ 
+ puzzle[column][row][number] = 0;
+ 
+//std::cout << "The function (remove_number) has concluded." << std::endl;
  
 }
 
 //Replace the cell's number with NUMBER, then removes all other 
 //possible numbers for that cell.
-//Only called at puzzle creation, and when a number is SURE to be the only possible answer.
-void replace_number(int puzzle[9][9][10], int column, int row, int number) {
+void change_cell_number(int puzzle[9][9][10], int column, int row, int number) {
   
-std::cout << "The function (replace_number) has been called." << std::endl;
+//std::cout << "The function (replace_number) has been called." << std::endl;
  
  puzzle[column][row][0] = number;
- remove_number(puzzle, column, row, number);
  
-std::cout << "The function (replace_number) has concluded." << std::endl;
+//std::cout << "The function (replace_number) has concluded." << std::endl;
  
 }
 
 //Check the column of the location passed in to ensure that the row is correct.
-void check_column(int puzzle[9][9][10], int column, int row) {
+int check_column(int puzzle[9][9][10], int column, int row) {
  
-std::cout << "The function (check_column) has been called." << std::endl;
+//std::cout << "The function (check_column) has been called." << std::endl;
  
-std::cout << "The function (check_column) has concluded." << std::endl;
+//std::cout << "The function (check_column) has concluded." << std::endl;
  
 }
 
 //Check the row of the location passed in to ensure that the row is correct.
-void check_row(int puzzle[9][9][10], int column, int row) {
+int check_row(int puzzle[9][9][10], int column, int row) {
 
-std::cout << "The function (check_row) has been called." << std::endl;
+//std::cout << "The function (check_row) has been called." << std::endl;
 
-std::cout << "The function (check_row) has concluded." << std::endl;
+//std::cout << "The function (check_row) has concluded." << std::endl;
  
 }
 
 //Check the box of the location passed in to ensure that the box is correct.
-void check_box(int puzzle[9][9][10], int column, int row) {
+int check_box(int puzzle[9][9][10], int column, int row) {
  
-std::cout << "The function (check_box) has been called." << std::endl;
+//std::cout << "The function (check_box) has been called." << std::endl;
 
-std::cout << "The function (check_box) has concluded." << std::endl;
+//std::cout << "The function (check_box) has concluded." << std::endl;
  
 }
 
 //Scan through the entire puzzle, making sure that all cells are correct.
-void check_puzzle(int puzzle[9][9][10]) {
+int check_puzzle(int puzzle[9][9][10]) {
  
 std::cout << "The function (check_puzzle) has been called." << std::endl;
 
 std::cout << "The function (check_puzzle) has concluded." << std::endl;
+ 
+}
+
+//Scan through the column of the passed in location, changing the set of possible numbers
+//that the location can be. If only one possibility remains, than change the cell to that number.
+void replace_column(int puzzle[9][9][10], int column, int row, int number) {
+ 
+//std::cout << "The function (replace_column) has been called." << std::endl;
+
+//std::cout << "The function (replace_column) has concluded." << std::endl;
+ 
+}
+
+//Scan through the row of the passed in location, changing the set of possible numbers
+//that the location can be. If only one possibility remains, than change the cell to that number.
+void replace_row(int puzzle[9][9][10], int column, int row, int number) {
+ 
+//std::cout << "The function (replace_row) has been called." << std::endl;
+
+//std::cout << "The function (replace_row) has concluded." << std::endl;
+ 
+}
+
+//Scan through the box of the passed in location, changing the set of possible numbers
+//that the location can be. If only one possibility remains, than change the cell to that number.
+void replace_box(int puzzle[9][9][10], int column, int row, int number) {
+ 
+//std::cout << "The function (replace_box) has been called." << std::endl;
+
+//std::cout << "The function (replace_box) has concluded." << std::endl;
+ 
+}
+
+//Scan through the entire puzzle, looking for any cells that only has one possible
+//number option, changing them to the number as it passes, then checks for correctness.
+void replace_puzzle(int puzzle[9][9][10]) {
+ 
+std::cout << "The function (replace_puzzle) has been called." << std::endl;
+
+std::cout << "The function (replace_puzzle) has concluded." << std::endl;
  
 }
 
@@ -172,6 +235,31 @@ std::cout << "The function (copy_test_to_output) has concluded." << std::endl;
  
 }
 
+//Changes the list of possible numbers at the location passed in, initializing puzzle.
+void setup_puzzle(int puzzle[9][9][10], int column, int row, int number) {
+ 
+//std::cout << "The function (setup_puzzle) has been called." << std::endl;
+ 
+ change_cell_number(puzzle, column, row, number);
+ 
+ for (int temp = 1; temp < 10; temp = temp + 1) {
+  
+  if (number == 0 || temp == number) {
+  
+   puzzle[column][row][temp] = 1;
+   
+  } else {
+   
+   remove_possible_number(puzzle, column, row, temp);
+   
+  }  
+  
+ }
+ 
+//std::cout << "The function (setup_puzzle) has concluded." << std::endl;
+ 
+}
+
 //Adds numbers to the original puzzle, which shouldn't be altered after this in any way.
 void create_original_puzzle(std::ifstream &input_file) {
  
@@ -189,61 +277,61 @@ std::cout << "The function (create_original_puzzle) has been called." << std::en
       
      case '0':
 //std::cout << "Case 0." << std::endl;
-      replace_number(original_puzzle, column, row, 0);
+      setup_puzzle(original_puzzle, column, row, 0);
       column = column + 1;
       break;
       
      case '1':
 //std::cout << "Case 1." << std::endl;
-      replace_number(original_puzzle, column, row, 1);
+      setup_puzzle(original_puzzle, column, row, 1);
       column = column + 1;  
       break;
        
      case '2':
 //std::cout << "Case 2." << std::endl;
-      replace_number(original_puzzle, column, row, 2);
+      setup_puzzle(original_puzzle, column, row, 2);
       column = column + 1;
       break;
 
      case '3':
 //std::cout << "Case 3." << std::endl;
-      replace_number(original_puzzle, column, row, 3);
+      setup_puzzle(original_puzzle, column, row, 3);
       column = column + 1;
       break;
       
      case '4':
 //std::cout << "Case 4." << std::endl;
-      replace_number(original_puzzle, column, row, 4);
+      setup_puzzle(original_puzzle, column, row, 4);
       column = column + 1;
       break;
       
      case '5':
 //std::cout << "Case 5." << std::endl;
-      replace_number(original_puzzle, column, row, 5);
+      setup_puzzle(original_puzzle, column, row, 5);
       column = column + 1;
       break;
       
      case '6':
 //std::cout << "Case 6." << std::endl;
-      replace_number(original_puzzle, column, row, 6);
+      setup_puzzle(original_puzzle, column, row, 6);
       column = column + 1;
       break;
       
      case '7':
 //std::cout << "Case 7." << std::endl;
-      replace_number(original_puzzle, column, row, 7);
+      setup_puzzle(original_puzzle, column, row, 7);
       column = column + 1;
       break;
       
      case '8':
 //std::cout << "Case 8." << std::endl;
-      replace_number(original_puzzle, column, row, 8);
+      setup_puzzle(original_puzzle, column, row, 8);
       column = column + 1;
       break;
       
      case '9':
 //std::cout << "Case 9." << std::endl;
-      replace_number(original_puzzle, column, row, 9);
+      setup_puzzle(original_puzzle, column, row, 9);
       column = column + 1;
       break;
       
