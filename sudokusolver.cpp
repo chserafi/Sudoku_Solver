@@ -99,7 +99,7 @@ std::cout << std::endl << "The function (print_puzzle) has been called." << std:
  
  while (row < 9) {
   
-  while column < 9) {
+  while (column < 9) {
    
    std::cout << puzzle[column][row][0];
    column = column + 1;
