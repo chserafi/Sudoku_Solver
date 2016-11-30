@@ -87,6 +87,22 @@ std::cout << "The function (check_row) has concluded." << std::endl;
  
 }
 
+void check_puzzle(int puzzle[9][9]) {
+ 
+ for (int row = 0; row < 9; row = row + 1) {
+  
+  for (int column = 0; column < 9; column = column + 1) {
+   
+   check_column(puzzle, column, row);
+   check_row(puzzle, column, row);
+   
+  }
+  
+ }
+ 
+}
+
+//TODO convert to for loops?
 void print_puzzle(int puzzle[9][9]) {
  
 std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
@@ -312,8 +328,7 @@ int main (int argc, char *argv[]) {
        
        create_original_puzzle(input_file);
 //print_puzzle(original_puzzle);
-       check_column(output_puzzle, 0, 0);
-       check_row(output_puzzle, 8, 8);
+       check_puzzle(output_puzzle);
        print_puzzle(output_puzzle);
         
       } else {
