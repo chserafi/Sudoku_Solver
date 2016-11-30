@@ -94,9 +94,12 @@ void print_puzzle(int puzzle[9][9][10]) {
  
 std::cout << std::endl << "The function (print_puzzle) has been called." << std::endl;
  
- for (int row = 0; row < 9; row = row + 1) {
+ int row = 0;
+ int column = 0;
+ 
+ while (row < 9) {
   
-  for (int column = 0; column < 9; column = column + 1) {
+  while column < 9) {
    
    std::cout << puzzle[column][row][0];
    column = column + 1;
