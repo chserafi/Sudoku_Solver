@@ -35,7 +35,7 @@ int last_possible_number(int puzzle[9][9][10], int column, int row) {
   
   if (possibilities == 1) {
    
-   output = temp;
+   output = crawler;
    
   } else {
    
